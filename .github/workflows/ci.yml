@@ -67,7 +67,7 @@ jobs:
         include:
         - name: manylinux
           os: ubuntu-latest
-        - name: macos
+        - name: macosx
           os: macos-latest
         - name: win
           os: windows-latest
@@ -94,14 +94,14 @@ jobs:
         if: runner.os == 'Windows'
         run: python -m cibuildwheel --output-dir wheelhouse
         env:
-          CIBW_BUILD: cp38-${{ matrix.name }}* pp*
+          CIBW_BUILD: cp38-${{ matrix.name }}* cp314t-${{ matrix.name }}* pp*-${{ matrix.name }}*
           CIBW_ENABLE: pypy
 
       - name: Build wheels for Linux and macOS
         if: runner.os != 'Windows'
         run: python -m cibuildwheel --output-dir wheelhouse
         env:
-          CIBW_BUILD: cp38-${{ matrix.name }}* pp*
+          CIBW_BUILD: cp38-${{ matrix.name }}* cp314t-${{ matrix.name }}* pp*-${{ matrix.name }}*
           CIBW_ENABLE: pypy
           CIBW_ARCHS_LINUX: auto aarch64
           CIBW_BEFORE_BUILD_LINUX: yum install -y libffi-devel
