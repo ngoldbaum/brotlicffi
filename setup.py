@@ -101,7 +101,7 @@ setup(
     install_requires=[
         "cffi>=1.0.0",
     ],
-    python_requires=">=3.7",
+    python_requires=">=3.8",
     cffi_modules=["src/brotlicffi/_build.py:ffi"],
     packages=find_packages('src'),
     package_dir={'': 'src'},
@@ -116,11 +116,12 @@ setup(
         "Programming Language :: Python :: Implementation :: CPython",
         "Programming Language :: Python :: Implementation :: PyPy",
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
         "Programming Language :: Python :: 3.11",
         "Programming Language :: Python :: 3.12",
+        "Programming Language :: Python :: 3.13",
+        "Programming Language :: Python :: 3.14",
     ]
 )
