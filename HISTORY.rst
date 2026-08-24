@@ -1,7 +1,15 @@
 Changelog
 =========
 
-1.2.0.1 (2025-03-05)
+1.2.0.2 (2026-08-21)
+--------------------
+
+- Fixed a bug where ``Decompressor.decompress()`` could leave stale
+  unconsumed input behind after fully consuming a chunk of compressed
+  data, causing subsequent calls to fail or re-process old data.
+- Since cibuildwheel dropped support, this release does not include Python 3.8 wheels.
+
+1.2.0.1 (2026-03-05)
 --------------------
 
 - Added support for the free-threaded build of Python 3.14.
